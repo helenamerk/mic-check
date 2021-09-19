@@ -4,6 +4,14 @@ A lightweight package for requesting camera and microphone permissions from the 
 
 ---
 
+## Motivation
+
+One of the most frustrating pieces of building a video chatting website is helping the user set up camera and microphone access. Ideally, you should be able to use the [Permissions API](https://www.w3.org/TR/permissions/) to request media device access, but it isn't yet available on [Safari](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API#permissions_interface) which accounts for a significant group of users.
+
+[`navigation.mediaDevices.getUserMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) is now available on all major browsers, but it returns different errors for the same problems across various browsers (Chrome, Firefox, Edge, Safari) and operating systems (macOS, Windows). Some problems, like the system denying permission, are more common on macOS. Whereas being unable to start the video stream due to another application using it is more Windows specific. Oh, and Firefox is the only one with any [error documentation](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#exceptions) at all.
+
+Handling these errors across browsers and OS's can be difficult, but is crucial to a great user experience. `mic-check` categorizes the major errors and allows you to focus on building a great experience!
+
 ## Installation
 
 ```
@@ -62,6 +70,14 @@ requestMediaPermissions()
 ### [bowser](https://github.com/lancedikson/bowser)
 
 A small, fast and rich-API browser/platform/engine detector for both browser and node.
+
+## Examples
+
+### React
+
+```
+yarn install && yarn start
+```
 
 ## Resources
 
