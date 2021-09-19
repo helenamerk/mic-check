@@ -77,6 +77,14 @@ You can try it out by going to `examples/react-example` and running:
 yarn install && yarn start
 ```
 
+## Roadmap
+
+<input type="checkbox" disabled /> Allow custom constraints for `getUserMedia()`.
+
+<input type="checkbox" disabled /> Handle errors for when there are no camera or microphone devices.
+
+<input type="checkbox" disabled /> Provide support for mobile browsers.
+
 ## Dependencies
 
 ### [bowser](https://github.com/lancedikson/bowser)
@@ -88,3 +96,7 @@ A small, fast and rich-API browser/platform/engine detector for both browser and
 -   [Common getUserMedia() Errors](https://blog.addpipe.com/common-getusermedia-errors/) - A great read explaining various errors when calling getUserMedia() on Firefox vs Chrome. (slightly outdated)
 -   [MediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) - Mozilla's documentation for the reason behind errors when calling getUserMedia().
 -   [StackOverflow: reprompt for permissions with getUserMedia() after initial denial](https://stackoverflow.com/a/52701322/6643002) - Some good responses for ways to ask for permission to access camera and microphone.
+
+---
+
+<p align="center">Made with ❤️ at Glimpse</p>
