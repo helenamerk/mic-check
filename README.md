@@ -69,6 +69,10 @@ requestMediaPermissions()
 
 ### React
 
+We have found [Google Meet](https://meet.google.com/) to have one of the best onboarding experiences for camera and microphone permissions. They do a good job of explaining permissions, showing how to allow permissions, and deep linking into System Preferences or Settings when needed. This example, built with React and [Material UI](https://mui.com/), closely copies the Google Meet experience.
+
+You can try it out by going to `examples/react-example` and running:
+
 ```
 yarn install && yarn start
 ```
