@@ -46,8 +46,25 @@ requestMediaPermissions()
 
 ```
 
+## Documentation
+
+### Errors
+
+| Error Type (MediaPermissionsError) | Description                                                                |
+| ---------------------------------- | -------------------------------------------------------------------------- |
+| SystemPermissionDenied             | Browser does not have access to camera or microphone (common on macOS)     |
+| UserPermissionDenied               | User did not grant camera or microphone permissions in the popup           |
+| CouldNotStartVideoSource           | Another application or browser tab is using the camera (common on Windows) |
+| Generic                            | Everything else                                                            |
+
 ## Dependencies
 
 ### [bowser](https://github.com/lancedikson/bowser)
 
 A small, fast and rich-API browser/platform/engine detector for both browser and node.
+
+## Resources
+
+-   [Common getUserMedia() Errors](https://blog.addpipe.com/common-getusermedia-errors/) - A great read explaining various errors when calling getUserMedia() on Firefox vs Chrome. (slightly outdated)
+-   [MediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) - Mozilla's documentation for the reason behind errors when calling getUserMedia().
+-   [StackOverflow: reprompt for permissions with getUserMedia() after initial denial](https://stackoverflow.com/a/52701322/6643002) - Some good responses for ways to ask for permission to access camera and microphone.
