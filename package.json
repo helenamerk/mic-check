@@ -1,0 +1,37 @@
+{
+	"name": "mic-check",
+	"title": "mic-check",
+	"version": "0.0.1",
+	"description": "A wrapper for requesting audio and video permissions on JavaScript websites.",
+	"main": "lib/index.js",
+	"module": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"files": [
+		"lib/**/*"
+	],
+	"scripts": {
+		"clean": "rimraf lib/",
+		"build": "npm run clean && tsc",
+		"prepare": "npm run build",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gtechnologies/cyclops.git",
+		"baseUrl": "https://github.com/gtechnologies/cyclops"
+	},
+	"keywords": [
+		"javascript",
+		"react",
+		"permissions"
+	],
+	"readmeFilename": "README.md",
+	"peerDependencies": {},
+	"devDependencies": {
+		"prettier": "^2.4.1",
+		"typescript": "^4.4.3"
+	},
+	"dependencies": {
+		"bowser": "^2.11.0"
+	}
+}
