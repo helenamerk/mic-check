@@ -10,6 +10,8 @@ A lightweight package for requesting camera and microphone permissions from the 
 <img src="./images/SystemPermissionDeniedScreen.png" width="40%" />
 </div>
 
+Note: This library does not include any UI or components and is designed to help you implement those pieces more easily through better error handling. You can, however, use the code included in the [examples](./examples).
+
 ## Motivation
 
 One of the most frustrating pieces of building a video chatting website is helping the user set up camera and microphone access. Ideally, you should be able to use the [Permissions API](https://www.w3.org/TR/permissions/) to request media device access, but it isn't yet available on [Safari](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API#permissions_interface) which accounts for a significant group of users.
@@ -89,7 +91,7 @@ These are common errors and recommended user actions to resolve them that we hav
 
 We have found [Google Meet](https://meet.google.com/) to have one of the best onboarding experiences for camera and microphone permissions. They do a good job of explaining permissions, showing how to allow permissions, and deep linking into System Preferences or Settings when needed. This example, built with React and [Material UI](https://mui.com/), closely copies the Google Meet experience.
 
-You can try it out by going to `examples/react-example` and running:
+You can try it out by going to [`examples/react-example`](./examples/react-example) and running:
 
 ```
 yarn install && yarn start
