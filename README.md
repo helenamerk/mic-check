@@ -62,7 +62,7 @@ requestMediaPermissions()
 
 ## Documentation
 
-### Errors
+### requestMediaPermissions() Errors
 
 | Error Type (MediaPermissionsError) | Description                                                                |
 | ---------------------------------- | -------------------------------------------------------------------------- |
@@ -70,6 +70,18 @@ requestMediaPermissions()
 | UserPermissionDenied               | User did not grant camera or microphone permissions in the popup           |
 | CouldNotStartVideoSource           | Another application or browser tab is using the camera (common on Windows) |
 | Generic                            | Everything else                                                            |
+
+### Browser Errors
+
+These are common errors and recommended user actions to resolve them that we have discovered from testing the four major browsers on Windows and macOS.
+
+| Problem                                                                                  | OS (macOS, Windows) | Chrome                                         | Safari                                                                                                                                             | Edge                                           | Firefox                                                                                               | Error Type (MediaPermissionsError) | Recommended User Action                                                               |
+| ---------------------------------------------------------------------------------------- | ------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------- |
+| Browser doesn't have System Preferences access to camera or mic                          | macOS               | NotAllowedError: Permission denied by system   | N/A (Safari always has access)                                                                                                                     | NotAllowedError: Permission denied             | NotFoundError: The object can not be found here.                                                      | SystemPermissionDenied             | Open Mac System Preferences and enable under Camera                                   |
+| Browser doesn't have System Preferences access to camera or mic                          | Windows             | NotReadableError: Could not start video source | N/A (Safari not available)                                                                                                                         | NotReadableError: Could not start video source | NotReadableError: Failed to allocate videosource                                                      | N/A                                | Open Windows Settings and enable under Camera                                         |
+| User denied permission to access camera or mic                                           | macOS, Windows      | NotAllowedError: Permission denied             | NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission. | NotAllowedError: Permission denied             | NotAllowedError: The request is not allowed by the user agent or the platform in the current context. | UserPermissionDenied               | Manually give permission by clicking on Camera Blocked icon (Safari needs a reprompt) |
+| Camera in use by another application (Zoom, Webex) or tab (Google Meet, Messenger Video) | Windows             | NotReadableError: Could not start video source | N/A (Safari not available)                                                                                                                         | NotReadableError: Could not start video source | AbortError: Starting videoinput failed                                                                | CouldNotStartVideoSource           | Turn off other video                                                                  |
+| All Other Errors                                                                         |                     |                                                |                                                                                                                                                    |                                                |                                                                                                       | Generic                            |                                                                                       |
 
 ## Examples
 
