@@ -65,12 +65,6 @@ requestMediaPermissions()
 | CouldNotStartVideoSource           | Another application or browser tab is using the camera (common on Windows) |
 | Generic                            | Everything else                                                            |
 
-## Dependencies
-
-### [bowser](https://github.com/lancedikson/bowser)
-
-A small, fast and rich-API browser/platform/engine detector for both browser and node.
-
 ## Examples
 
 ### React
@@ -78,6 +72,12 @@ A small, fast and rich-API browser/platform/engine detector for both browser and
 ```
 yarn install && yarn start
 ```
+
+## Dependencies
+
+### [bowser](https://github.com/lancedikson/bowser)
+
+A small, fast and rich-API browser/platform/engine detector for both browser and node.
 
 ## Resources
 
