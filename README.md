@@ -4,6 +4,12 @@ A lightweight package for requesting camera and microphone permissions from the 
 
 ---
 
+<div align="center">
+<img src="./images/RequestPermissionScreen.png" width="70%" />
+<img src="./images/UserPermissionDeniedScreen.png" width="40%" />
+<img src="./images/SystemPermissionDeniedScreen.png" width="40%" />
+</div>
+
 ## Motivation
 
 One of the most frustrating pieces of building a video chatting website is helping the user set up camera and microphone access. Ideally, you should be able to use the [Permissions API](https://www.w3.org/TR/permissions/) to request media device access, but it isn't yet available on [Safari](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API#permissions_interface) which accounts for a significant group of users.
