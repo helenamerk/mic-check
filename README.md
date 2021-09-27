@@ -62,6 +62,39 @@ requestMediaPermissions()
 
 ```
 
+## Seperate audio/video permission
+
+```ts
+import {
+  MediaPermissionsError
+  MediaPermissionsErrorType,
+  requestAudioPermissions,
+  requestVideoPermissions,
+  requestMediaPermissions
+} from 'mic-check';
+
+// Requesting AUDIO permission only:
+requestAudioPermissions()
+	.then(() => {})
+	.catch((err: MediaPermissionsError) => {});
+
+// another way to request AUDIO only...
+requestMediaPermissions({audio: true, video: false})
+	.then(() => {})
+	.catch((err: MediaPermissionsError) => {});
+
+// Requesting VIDEO permission only:
+requestVideoPermissions()
+	.then(() => {})
+	.catch((err: MediaPermissionsError) => {});
+
+// another way to request VIDEO only...
+requestMediaPermissions({audio: false, video: true})
+	.then(() => {})
+	.catch((err: MediaPermissionsError) => {});
+
+```
+
 ## Documentation
 
 ### requestMediaPermissions() Errors
@@ -99,7 +132,7 @@ yarn install && yarn start
 
 ## Roadmap
 
-<input type="checkbox" disabled /> Allow custom constraints for `getUserMedia()`.
+<input type="checkbox" checked /> Allow custom constraints for `getUserMedia()`.
 
 <input type="checkbox" disabled /> Handle errors for when there are no camera or microphone devices.
 

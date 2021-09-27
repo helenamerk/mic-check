@@ -1,7 +1,7 @@
 {
 	"name": "mic-check",
 	"title": "mic-check",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A wrapper for requesting audio and video permissions on JavaScript websites.",
 	"main": "lib/index.js",
 	"module": "lib/index.js",
