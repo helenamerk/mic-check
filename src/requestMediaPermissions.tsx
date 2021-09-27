@@ -21,11 +21,11 @@ export enum MediaPermissionsErrorType {
  * Request camera and mic permissions from the browser.
  * @returns
  */
-export const requestMediaPermissions = () => {
+
+export const requestMediaPermissions = (constraints?: MediaStreamConstraints) => {
 	return new Promise<boolean>((resolve, reject) => {
-		let constraints = { audio: true, video: true };
 		navigator.mediaDevices
-			.getUserMedia(constraints)
+			.getUserMedia(constraints ?? { audio: true, video: true })
 			.then((stream: MediaStream) => {
 				stream.getTracks().forEach((t) => {
 					t.stop();
@@ -35,10 +35,6 @@ export const requestMediaPermissions = () => {
 			.catch((err: any) => {
 				const browser = Bowser.getParser(window.navigator.userAgent);
 				const browserName = browser.getBrowserName();
-				// console.log(browserName);
-				// console.log(err.name);
-				// console.log(err.message);
-				// console.log(browser);
 
 				const errName = err.name;
 				const errMessage = err.message;
@@ -97,3 +93,6 @@ export const requestMediaPermissions = () => {
 			});
 	});
 };
+
+export const requestAudioPermissions = () => requestMediaPermissions({ audio: true, video: false })
+export const requestVideoPermissions = () => requestMediaPermissions({ audio: false, video: true })
