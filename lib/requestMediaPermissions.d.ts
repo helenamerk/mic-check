@@ -14,7 +14,9 @@ export declare enum MediaPermissionsErrorType {
     Generic = "Generic"
 }
 /**
- * Here's some documentation
+ * Request camera and mic permissions from the browser.
  * @returns
  */
-export declare const requestMediaPermissions: () => Promise<unknown>;
+export declare const requestMediaPermissions: (constraints?: MediaStreamConstraints | undefined) => Promise<boolean>;
+export declare const requestAudioPermissions: () => Promise<boolean>;
+export declare const requestVideoPermissions: () => Promise<boolean>;
