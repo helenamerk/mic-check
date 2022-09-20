@@ -36,7 +36,7 @@ yarn add mic-check
 
 ```ts
 import {
-  MediaPermissionsError
+  MediaPermissionsError,
   MediaPermissionsErrorType,
   requestMediaPermissions
 } from 'mic-check';
