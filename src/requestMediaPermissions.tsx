@@ -22,7 +22,9 @@ export enum MediaPermissionsErrorType {
  * @returns
  */
 
-export const requestMediaPermissions = (constraints?: MediaStreamConstraints) => {
+export const requestMediaPermissions = (
+	constraints?: MediaStreamConstraints,
+) => {
 	return new Promise<boolean>((resolve, reject) => {
 		navigator.mediaDevices
 			.getUserMedia(constraints ?? { audio: true, video: true })
@@ -45,7 +47,10 @@ export const requestMediaPermissions = (constraints?: MediaStreamConstraints) =>
 						if (errMessage === 'Permission denied by system') {
 							errorType =
 								MediaPermissionsErrorType.SystemPermissionDenied;
-						} else if (errMessage === 'Permission denied') {
+						} else if (
+							errMessage === 'Permission denied' ||
+							errMessage === 'Permission dismissed'
+						) {
 							errorType =
 								MediaPermissionsErrorType.UserPermissionDenied;
 						}
@@ -94,5 +99,7 @@ export const requestMediaPermissions = (constraints?: MediaStreamConstraints) =>
 	});
 };
 
-export const requestAudioPermissions = () => requestMediaPermissions({ audio: true, video: false })
-export const requestVideoPermissions = () => requestMediaPermissions({ audio: false, video: true })
+export const requestAudioPermissions = () =>
+	requestMediaPermissions({ audio: true, video: false });
+export const requestVideoPermissions = () =>
+	requestMediaPermissions({ audio: false, video: true });
